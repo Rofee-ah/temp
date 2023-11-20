@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .todos{
+        width: 200px;
+        padding: 10px;
+        /* margin-top: 30px; */
+        margin-left: 15px;
+        font-size: 20px;
+    }
+    .buts{
+        padding: 10px;
+        margin-left: 30px;
+    }
+        
+        .contain{
+            width: 100%;
+            min-height: 100vh;
+            background-color: #00053a;
+        }
+        .two{
+            color: #fff;
+            
+        }
+        button{
+            width: 300px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            margin: 30px 30px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        .head{
+            color: #fff;
+            /* margin-bottom: 50px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <h1 class="head">Todo List</h1>
+        <input type="text" name="" id="todo" class="todos">
+        <input type="button" value="Todo" onclick="add()" class="buts">
+    <!-- <button onclick="add()" id="but" class="buts">Todo</button> -->
+    <h1 class="two" id="two"></h1>
+</div>
+</body>
+    
+    
+<script>
+    //   localStorage.clear()
+    var todos = []
+
+    function add(){
+    var one = document.getElementById('todo').value 
+    todos.push(one)
+    localStorage.setItem("mytodos", JSON.stringify(todos))
+    var out = JSON.parse(localStorage.getItem("mytodos"))
+    var myli = document.createElement("button")
+    var myChild = document.createTextNode(one)
+     var a = myli.appendChild(myChild)
+
+     document.getElementById('two').appendChild(myli) = a
+
+    }
+
+    
+    //  window.onload(document.getElementById('two').innerHTML=JSON.parse(localStorage.getItem("mytodos") ))
+</script>
+</html>

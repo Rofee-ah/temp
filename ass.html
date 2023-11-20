@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="one">
+    <button onclick="add()">Add</button>
+    <h1 id="display"></h1>
+
+</body>
+<script>
+    var arry = [5]
+    function add(){
+       var two =  document.getElementById('one').value
+       arry.push(two)
+       localStorage.setItem("myNames",JSON.stringify(arry))
+       document.getElementById("display").innerHTML=JSON.parse(localStorage.getItem("myNames"))
+    }
+    window.onload(document.getElementById("display").innerHTML = JSON.parse(localStorage.getItem("myNames")))
+</script>
+</html>
